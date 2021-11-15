@@ -1,0 +1,32 @@
+
+
+#spring:
+#  jpa:
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: create-drop
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.PostgreSQLDialect
+#        format_sql: true
+#
+#  jmx:
+#    enabled: false
+#
+#  datasource:
+#    url: jdbc:postgresql://postgres-db:5432/hapvida
+#    username: root
+#    password: root
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:hapvida
+    username: sa
+    password: admin123
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true
+

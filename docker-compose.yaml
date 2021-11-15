@@ -1,0 +1,27 @@
+version: '3.7'
+
+services:
+  spring-app:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/app
+    working_dir: /app
+    command: sh run.sh
+    ports:
+      - "8080:8080"
+      - "8005:8005"
+#    depends_on:
+#      - postgres-db
+
+#  postgres-db:
+#    image: postgres
+#    restart: always
+#    environment:
+#      POSTGRES_PASSWORD: root
+#      POSTGRES_USER: root
+#    ports:
+#      - "5432:5432"
+#    volumes:
+#      - ./init-user-db.sh:/docker-entrypoint-initdb.d/init-user-db.sh
